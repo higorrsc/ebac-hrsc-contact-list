@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { ActionButton } from '../../styles'
@@ -11,7 +10,6 @@ type Props = {
 
 const SideBar = ({ showFilters }: Props) => {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
 
   const letters = []
   for (let i = 65; i <= 90; i++) {

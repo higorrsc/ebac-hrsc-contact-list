@@ -22,6 +22,14 @@ export const Container = styled.div`
   grid-template-columns: 196px auto;
 `
 
+export const SecondaryTitle = styled.h2`
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: bold;
+`
+
 export const ActionButton = styled.button`
   font-weight: bold;
   font-size: 12px;
@@ -38,6 +46,17 @@ export const MainContainer = styled.main`
   padding: 0 40px;
   height: 100vh;
   overflow-y: scroll;
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 560px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  color: ${variaveis.laranjaEscuro};
 `
 
 export const FormField = styled.input<Props>`

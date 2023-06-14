@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import { RootReducer } from '../../store'
-import { MainContainer } from '../../styles'
+import { MainContainer, SecondaryTitle } from '../../styles'
 import Contact from '../../components/Contact'
 
 const ContactList = () => {
@@ -26,6 +26,7 @@ const ContactList = () => {
 
   return (
     <MainContainer>
+      <SecondaryTitle>Lista de Contatos</SecondaryTitle>
       <ul>
         {contactsFiltered.map((c) => (
           <li key={c.id}>

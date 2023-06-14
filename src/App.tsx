@@ -5,7 +5,7 @@ import store from './store'
 import EstiloGlobal, { Container } from './styles'
 
 import Home from './pages/Home'
-import ContactDetail from './pages/ContactDetail'
+import AddContact from './pages/AddContact'
 
 const routes = createBrowserRouter([
   {
@@ -14,11 +14,7 @@ const routes = createBrowserRouter([
   },
   {
     path: '/new',
-    element: <ContactDetail updateContact={false} />
-  },
-  {
-    path: '/edit',
-    element: <ContactDetail updateContact={true} />
+    element: <AddContact />
   }
 ])
 
