@@ -30,7 +30,9 @@ const SideBar = ({ showFilters }: Props) => {
           </>
         ) : (
           <>
-            <ActionButton onClick={() => navigate('/')}>Voltar</ActionButton>
+            <ActionButton onClick={() => navigate('/')}>
+              Voltar para lista de Contatos
+            </ActionButton>
           </>
         )}
       </div>

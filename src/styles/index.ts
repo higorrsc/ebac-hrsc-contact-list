@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 import variaveis from './variables'
 
 type Props = {
-  formWidth?: string
+  componentWidth?: string
 }
 
 const EstiloGlobal = createGlobalStyle`
@@ -52,11 +52,15 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 560px;
+  gap: 8px;
   width: 100%;
   font-weight: bold;
   font-size: 14px;
   color: ${variaveis.laranjaEscuro};
+  background-color: ${variaveis.amareloAmbar};
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 16px;
 `
 
 export const FormField = styled.input<Props>`
@@ -66,7 +70,7 @@ export const FormField = styled.input<Props>`
   font-weight: bold;
   color: #666666;
   border-color: #666666;
-  width: ${({ formWidth = '100%' }) => formWidth};
+  width: ${({ componentWidth = '100%' }) => componentWidth};
 `
 
 export default EstiloGlobal

@@ -12,9 +12,11 @@ export const SaveButton = styled(ActionButton)`
 `
 
 export const ContactCard = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 2fr 1fr 1fr;
-  grid-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 8px;
   background-color: ${variables.amareloAmbar};
   padding: 16px;
   margin: 16px 0;

@@ -1,4 +1,3 @@
-import React from 'react'
 import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -53,7 +52,7 @@ const ContactForm = () => {
           placeholder="Telefone"
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
-          formWidth={'160px'}
+          componentWidth={'160px'}
         />
         <ActionButton type="submit">Cadastrar</ActionButton>
       </Form>

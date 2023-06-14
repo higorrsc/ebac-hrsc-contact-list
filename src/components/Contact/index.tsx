@@ -76,6 +76,7 @@ const Contact = ({
         placeholder="Telefone"
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
+        componentWidth={'160px'}
       />
       <div>
         {editMode ? (
