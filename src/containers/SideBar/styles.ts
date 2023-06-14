@@ -11,3 +11,10 @@ export const Aside = styled.aside`
     background-color: transparent;
   }
 `
+
+export const LetterCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+  justify-items: center;
+`

@@ -9,9 +9,27 @@ const initialState: ContactState = {
   contacts: [
     {
       id: 1,
-      fullName: 'Higor',
+      fullName: 'Higor Rodrigues dos Santos Cruz',
       email: 'higorrsc@gmail.com',
       phoneNumber: '27992054791'
+    },
+    {
+      id: 2,
+      fullName: 'Thaís de Melo Siqueira Cruz',
+      email: 'higorrsc@gmail.com',
+      phoneNumber: '27992054792'
+    },
+    {
+      id: 3,
+      fullName: 'Vinícius Siqueira Cruz',
+      email: 'higorrsc@gmail.com',
+      phoneNumber: '27992054793'
+    },
+    {
+      id: 4,
+      fullName: 'Erick Siqueira Cruz',
+      email: 'higorrsc@gmail.com',
+      phoneNumber: '27992054794'
     }
   ]
 }
