@@ -2,23 +2,36 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import ContactClass from '../../models/Contact'
-import { addHandle, updateHandle } from '../../store/reducers/contact'
+import {
+  addHandle,
+  deleteHandle,
+  updateHandle
+} from '../../store/reducers/contact'
 
+import { FormField, ActionButton } from '../../styles'
 import * as S from './styles'
-import { FormField } from '../../styles'
 
 type Props = ContactClass
 
 const Contact = ({
+  id: originalId,
   fullName: originalFullName,
   email: originalEmail,
   phoneNumber: originalPhoneNumber
 }: Props) => {
   const dispatch = useDispatch()
   const [editMode, setEditMode] = useState(false)
+  const [id, setId] = useState(-1)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
+
+  useEffect(() => {
+    if (originalId !== -1) {
+      setId(originalId)
+      console.log(originalId)
+    }
+  }, [originalId])
 
   useEffect(() => {
     if (originalFullName.length > 0) {
@@ -38,7 +51,7 @@ const Contact = ({
     }
   }, [originalPhoneNumber])
 
-  function cancelEditMode() {
+  const cancelEditMode = () => {
     setEditMode(false)
     setFullName(originalFullName)
     setEmail(originalEmail)
@@ -47,9 +60,51 @@ const Contact = ({
 
   return (
     <S.ContactCard>
-      <FormField type="text" placeholder="Nome" value={fullName} />
-      <FormField type="email" placeholder="E-Mail" value={email} />
-      <FormField type="tel" placeholder="Telefone" value={phoneNumber} />
+      <FormField
+        disabled={!editMode}
+        type="text"
+        placeholder="Nome"
+        value={fullName}
+        onChange={(e) => setFullName(e.target.value)}
+      />
+      <FormField
+        disabled={!editMode}
+        type="email"
+        placeholder="E-Mail"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <FormField
+        disabled={!editMode}
+        type="tel"
+        placeholder="Telefone"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
+      />
+      <div>
+        {editMode ? (
+          <>
+            <ActionButton
+              onClick={() => {
+                dispatch(updateHandle({ id, fullName, email, phoneNumber }))
+                setEditMode(false)
+              }}
+            >
+              Salvar
+            </ActionButton>
+            <ActionButton onClick={cancelEditMode}>Cancelar</ActionButton>
+          </>
+        ) : (
+          <>
+            <ActionButton onClick={() => setEditMode(true)}>
+              Editar
+            </ActionButton>
+            <ActionButton onClick={() => dispatch(deleteHandle(id))}>
+              Excluir
+            </ActionButton>
+          </>
+        )}
+      </div>
     </S.ContactCard>
   )
 }
