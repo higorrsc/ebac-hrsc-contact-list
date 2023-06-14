@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 type FilterState = {
   initialLetter?: string
 }
-const initialState: FilterState = { initialLetter: '' }
+const initialState: FilterState = { initialLetter: '*' }
 
 const filterSlice = createSlice({
   name: 'filter',

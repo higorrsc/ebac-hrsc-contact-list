@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { Botao } from '../../styles'
+import { ActionButton } from '../../styles'
 import LetterCard from '../../components/LetterCard'
 import * as S from './styles'
 
@@ -32,7 +32,7 @@ const SideBar = ({ showFilters }: Props) => {
           </>
         ) : (
           <>
-            <Botao onClick={() => navigate('/')}>Voltar</Botao>
+            <ActionButton onClick={() => navigate('/')}>Voltar</ActionButton>
           </>
         )}
       </div>

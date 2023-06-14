@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux'
 
 import { RootReducer } from '../../store'
+import { MainContainer } from '../../styles'
+import Contact from '../../components/Contact'
 
 const ContactList = () => {
   const { contacts } = useSelector((state: RootReducer) => state.contacts)
@@ -23,19 +25,20 @@ const ContactList = () => {
   const contactsFiltered = contactsFilter()
 
   return (
-    <>
+    <MainContainer>
       <ul>
         {contactsFiltered.map((c) => (
           <li key={c.id}>
-            Nome: {c.fullName}
-            <br />
-            E-Mail: {c.email}
-            <br />
-            Telefone: {c.phoneNumber}
+            <Contact
+              id={c.id}
+              fullName={c.fullName}
+              email={c.email}
+              phoneNumber={c.phoneNumber}
+            />
           </li>
         ))}
       </ul>
-    </>
+    </MainContainer>
   )
 }
 

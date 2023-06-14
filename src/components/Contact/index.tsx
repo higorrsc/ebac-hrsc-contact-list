@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux'
 import ContactClass from '../../models/Contact'
 import { addHandle, updateHandle } from '../../store/reducers/contact'
 
+import * as S from './styles'
+import { FormField } from '../../styles'
+
 type Props = ContactClass
 
 const Contact = ({
@@ -42,7 +45,13 @@ const Contact = ({
     setPhoneNumber(originalPhoneNumber)
   }
 
-  return <></>
+  return (
+    <S.ContactCard>
+      <FormField type="text" placeholder="Nome" value={fullName} />
+      <FormField type="email" placeholder="E-Mail" value={email} />
+      <FormField type="tel" placeholder="Telefone" value={phoneNumber} />
+    </S.ContactCard>
+  )
 }
 
 export default Contact
