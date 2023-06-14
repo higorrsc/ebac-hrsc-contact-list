@@ -1,12 +1,8 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import ContactClass from '../../models/Contact'
-import {
-  addHandle,
-  deleteHandle,
-  updateHandle
-} from '../../store/reducers/contact'
+import { deleteHandle, updateHandle } from '../../store/reducers/contact'
 
 import { FormField, ActionButton } from '../../styles'
 import * as S from './styles'
